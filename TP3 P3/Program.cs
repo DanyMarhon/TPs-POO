@@ -54,8 +54,6 @@
     {
         return $"{Cantidad}";
     }
-
-
 }
 
 public class Peso
