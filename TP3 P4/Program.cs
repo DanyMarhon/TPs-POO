@@ -137,7 +137,8 @@ public class Estante
         foreach (var item in e1.productos)
         {
             contador++;
-            if (item is not null) { cantidadOcupada++; }
+            if (item is not null) { cantidadOcupada++; 
+                if (item == p1) { return false; } }
             if (item is null)
             {
                 ultimoLugarLibre = contador - 1;
@@ -147,7 +148,6 @@ public class Estante
                     lugarLibreDetectado = true;
                 }
             }
-            if (item == p1) { return false; }
         }
         if (e1.productos.Length > cantidadOcupada)
         {
