@@ -4,11 +4,11 @@ namespace Entidades
 {
     public class Jugador
     {
-        public int Dni { get; set; }
-        public string Nombre { get; set; }
-        public int PartidosJugados { get; set; }
-        public double PromedioGoles { get; set; }
-        public int TotalGoles { get; set; }
+        private int Dni { get; set; }
+        private string Nombre { get; set; }
+        private int PartidosJugados { get; set; }
+        private double PromedioGoles { get; set; }
+        private int TotalGoles { get; set; }
 
         public Jugador(int dni, string nombre)
         {
@@ -39,11 +39,9 @@ namespace Entidades
             sb.AppendLine($"DNI: {Dni}");
             sb.AppendLine($"Total Goles: {TotalGoles}");
             sb.AppendLine($"Partidos jugados: {PartidosJugados}");
-            sb.AppendLine($"Promedio de goles: {GetPromedioGoles}");
+            sb.AppendLine($"Promedio de goles: {GetPromedioGoles()}");
             return sb.ToString();
         }
-
-
 
         public override bool Equals(object? obj)
         {
@@ -54,6 +52,18 @@ namespace Entidades
         public override int GetHashCode()
         {
             return HashCode.Combine(Dni);
+        }
+
+        public static bool operator ==(Jugador? left, Jugador? right)
+        {
+            if (left is null || right is null) return false; ;
+            if (left!.Dni == right!.Dni) { return true; }
+            else { return false; }
+        }
+
+        public static bool operator !=(Jugador? left, Jugador? right)
+        {
+            return !(left == right);
         }
     }
 }
