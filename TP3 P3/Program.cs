@@ -132,7 +132,6 @@ public class Program
 
         var suma = d + p;
         var suma2 = p + d;
-
         Console.WriteLine(suma);
         Console.WriteLine(suma2);
     }

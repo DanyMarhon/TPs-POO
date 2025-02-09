@@ -7,7 +7,7 @@ public class Fraccion
 
     public Fraccion(int numerador, int denominador)
     {
-        //if (denominador == 0) {throw new ArgumentException("El denominador no puede ser cero.");}
+        //if (denominador == 0) { throw new ArgumentException("El denominador no puede ser cero."); }
         Numerador = numerador;
         Denominador = denominador;
     }
